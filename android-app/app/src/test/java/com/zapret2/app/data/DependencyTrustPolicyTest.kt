@@ -38,11 +38,11 @@ class DependencyTrustPolicyTest {
         val artifacts = document.getElementsByTagName("artifact")
         val checksums = document.getElementsByTagName("sha256")
         assertEquals("Unexpected verified component count", 589, components.length)
-        assertEquals("Unexpected verified artifact count", 962, artifacts.length)
+        assertEquals("Unexpected verified artifact count", 963, artifacts.length)
         assertEquals("Every resolved artifact must have exactly one SHA-256", artifacts.length, checksums.length)
         assertEquals(
             "Unexpected verification metadata bytes",
-            "a43be8deda50158426cb7ea12fc68993d4ae0949d75d984838c4406e329a3044",
+            "0c57e329f2a9cbeb879fe68c8516458236d38ccdf5415b0333f684472d2c6bd8",
             sha256(metadata),
         )
     }

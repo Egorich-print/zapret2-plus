@@ -23,6 +23,7 @@ import com.zapret2.app.ui.screen.HostsEditorScreen
 import com.zapret2.app.ui.screen.LogsScreen
 import com.zapret2.app.ui.screen.PresetsScreen
 import com.zapret2.app.ui.screen.ProfilesScreen
+import com.zapret2.app.ui.screen.VpnScreen
 import com.zapret2.app.ui.theme.MotionTokens
 
 @Composable
@@ -57,6 +58,7 @@ fun AppNavHost(
         },
     ) {
         composable(Screen.Control.route) { ControlScreen() }
+        composable(Screen.Vpn.route) { VpnScreen() }
         composable(Screen.Profiles.route) { ProfilesScreen() }
         composable(Screen.Presets.route) { PresetsScreen() }
         composable(Screen.Hostlists.route) { HostlistsScreen(navController) }

@@ -10,6 +10,7 @@ import androidx.compose.material.icons.filled.Info
 import androidx.compose.material.icons.filled.PlayArrow
 import androidx.compose.material.icons.filled.Terminal
 import androidx.compose.material.icons.filled.Tune
+import androidx.compose.material.icons.filled.VpnKey
 import androidx.compose.ui.graphics.vector.ImageVector
 import com.zapret2.app.R
 import java.net.URLEncoder
@@ -21,6 +22,7 @@ sealed class Screen(
     val icon: ImageVector,
 ) {
     object Control : Screen("control", R.string.screen_control, Icons.Default.PlayArrow)
+    object Vpn : Screen("vpn", R.string.screen_vpn, Icons.Default.VpnKey)
     object Profiles : Screen("profiles", R.string.screen_profiles, Icons.Default.Tune)
     object Presets : Screen("presets", R.string.screen_presets, Icons.Default.FolderOpen)
     object Hostlists : Screen("hostlists", R.string.screen_hostlists, Icons.AutoMirrored.Filled.List)
@@ -42,7 +44,7 @@ sealed class Screen(
     }
 
     companion object {
-        val mainScreens = listOf(Control, Profiles)
+        val mainScreens = listOf(Control, Vpn, Profiles)
         val configScreens = listOf(Presets)
         val dataScreens = listOf(Hostlists, HostsEditor, DnsManager)
         val systemScreens = listOf(Logs, About)

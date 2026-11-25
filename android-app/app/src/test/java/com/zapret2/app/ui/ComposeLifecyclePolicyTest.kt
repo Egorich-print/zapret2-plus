@@ -12,6 +12,7 @@ class ComposeLifecyclePolicyTest {
     fun everyStatefulDestination_collectsStateLifecycleAware() {
         val statefulScreens = listOf(
             "ControlScreen.kt",
+            "VpnScreen.kt",
             "ProfilesScreen.kt",
             "PresetsScreen.kt",
             "HostlistsScreen.kt",
@@ -103,12 +104,25 @@ class ComposeLifecyclePolicyTest {
         // holds a root shell for as long as the module needs. Its scope is therefore exempt and
         // constrained instead — see the dedicated policy below.
         val tileService = productionFile("tile/ServiceTileService.kt")
+        // The network guard is the second exemption, and it is narrower than the tile's: it is a
+        // foreground service, so its scope dies with the service, and its only work is to watch
+        // which radio the device is on.
+        val networkGuardServiceFile = productionFile("network/NetworkGuardService.kt")
+        val networkGuardService = networkGuardServiceFile.readText()
         val production = productionFile("").walkTopDown()
-            .filter { it.isFile && it.extension == "kt" && it != tileService }
+            .filter { it.isFile && it.extension == "kt" && it != tileService && it != networkGuardServiceFile }
             .joinToString("\n") { it.readText() }
         assertFalse(production.contains("GlobalScope"))
         assertFalse(production.contains("MainScope("))
         assertFalse(Regex("""(?<![A-Za-z])CoroutineScope\(""").containsMatchIn(production))
+
+        assertTrue(
+            networkGuardService.contains("CoroutineScope(SupervisorJob() + Dispatchers.Default)"),
+        )
+        assertTrue(networkGuardService.contains("scope.cancel()"))
+        assertTrue(networkGuardService.contains("delay(TICK_MILLIS)"))
+        assertFalse(networkGuardService.contains("GlobalScope"))
+        assertFalse(networkGuardService.contains("MainScope("))
     }
 
     /**

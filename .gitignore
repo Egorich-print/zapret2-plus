@@ -40,3 +40,8 @@ __pycache__/
 /zapret2/lua/zapret-obfs.lua
 /zapret2/lua/zapret-pcap.lua
 /zapret2/lua/zapret-tests.lua
+
+# The sing-box core is fetched by tools/fetch-libbox.sh: the native library is 81 MB and does
+# not belong in the history.
+android-app/app/src/main/jniLibs/
+android-app/app/libs/

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Zapret2</string>
+    <string name="app_name">Zapret2 Plus</string>
     <string name="app_subtitle">Управление обходом DPI</string>
     <string name="nav_open_menu">Открыть меню навигации</string>
     <string name="nav_more">Ещё</string>
@@ -550,4 +550,42 @@
     <string name="tile_subtitle_stopped">Остановлена</string>
     <string name="tile_subtitle_busy">Занято</string>
     <string name="tile_subtitle_unavailable">Недоступно</string>
+
+    <string name="screen_vpn">VPN</string>
+    <string name="vpn_tunnel">Туннель</string>
+    <string name="vpn_status_stopped">Остановлен</string>
+    <string name="vpn_status_starting">Запуск…</string>
+    <string name="vpn_status_running">Подключено</string>
+    <string name="vpn_status_error">Ошибка</string>
+    <string name="vpn_connect">Подключить</string>
+    <string name="vpn_disconnect">Отключить</string>
+    <string name="vpn_subscription">Подписка</string>
+    <string name="vpn_subscription_hint">Ссылка подписки</string>
+    <string name="vpn_update_subscription">Обновить</string>
+    <string name="vpn_test_servers">Тест серверов</string>
+    <string name="vpn_servers">Серверы</string>
+    <string name="vpn_servers_empty">Серверов пока нет. Добавьте подписку и обновите её.</string>
+    <string name="vpn_latency_value">%1$d мс</string>
+    <string name="vpn_latency_unknown">—</string>
+    <string name="vpn_routing">Маршрутизация</string>
+    <string name="vpn_auto_switch">Переключение между Wi-Fi и мобильным интернетом</string>
+    <string name="vpn_auto_switch_subtitle">Держит трафик на выбранной сети</string>
+    <string name="vpn_mode_auto">Автоматически</string>
+    <string name="vpn_mode_wifi">Только Wi-Fi</string>
+    <string name="vpn_mode_lte">Только мобильный интернет</string>
+    <string name="vpn_current_network">Текущая сеть</string>
+    <string name="vpn_network_wifi">Wi-Fi</string>
+    <string name="vpn_network_cellular">Мобильный интернет</string>
+    <string name="vpn_network_ethernet">Ethernet</string>
+    <string name="vpn_network_other">Другая</string>
+    <string name="vpn_network_none">Нет сети</string>
+    <string name="vpn_no_server_selected">Сначала выберите сервер</string>
+    <string name="vpn_notification_title">Туннель Zapret2 Plus</string>
+    <string name="vpn_notification_text">Туннель работает</string>
+    <string name="vpn_notification_channel">Туннель</string>
+    <string name="network_guard_notification_title">Переключение сети</string>
+    <string name="network_guard_notification_channel">Переключение сети</string>
+    <string name="network_guard_notification_auto">Автоматически: сначала Wi-Fi, при отказе мобильный интернет</string>
+    <string name="network_guard_notification_wifi">Только Wi-Fi</string>
+    <string name="network_guard_notification_lte">Только мобильный интернет</string>
 </resources>

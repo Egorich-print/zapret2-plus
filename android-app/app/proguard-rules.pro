@@ -9,6 +9,10 @@
     native <methods>;
 }
 
+# sing-box (libbox) gomobile bindings are reached from native code by name.
+-keep class go.** { *; }
+-keep class io.nekohasekai.** { *; }
+
 # Coroutines
 -keepnames class kotlinx.coroutines.internal.MainDispatcherFactory {}
 -keepnames class kotlinx.coroutines.CoroutineExceptionHandler {}

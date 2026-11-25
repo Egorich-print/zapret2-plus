@@ -9,4 +9,14 @@ internal object AppDebugLog {
         if (!BuildConfig.DEBUG) return
         if (error == null) Log.e(tag, message) else Log.e(tag, message, error)
     }
+
+    fun warn(tag: String, message: String) {
+        if (!BuildConfig.DEBUG) return
+        Log.w(tag, message)
+    }
+
+    fun debug(tag: String, message: String) {
+        if (!BuildConfig.DEBUG) return
+        Log.d(tag, message)
+    }
 }

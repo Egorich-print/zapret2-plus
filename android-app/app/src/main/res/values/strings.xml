@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Zapret2</string>
+    <string name="app_name">Zapret2 Plus</string>
     <string name="app_subtitle">Network bypass control</string>
     <string name="nav_open_menu">Open navigation menu</string>
     <string name="nav_more">More</string>
@@ -536,4 +536,42 @@
     <string name="tile_subtitle_stopped">Stopped</string>
     <string name="tile_subtitle_busy">Busy</string>
     <string name="tile_subtitle_unavailable">Unavailable</string>
+
+    <string name="screen_vpn">VPN</string>
+    <string name="vpn_tunnel">Tunnel</string>
+    <string name="vpn_status_stopped">Stopped</string>
+    <string name="vpn_status_starting">Starting…</string>
+    <string name="vpn_status_running">Connected</string>
+    <string name="vpn_status_error">Failed</string>
+    <string name="vpn_connect">Connect</string>
+    <string name="vpn_disconnect">Disconnect</string>
+    <string name="vpn_subscription">Subscription</string>
+    <string name="vpn_subscription_hint">Subscription URL</string>
+    <string name="vpn_update_subscription">Update</string>
+    <string name="vpn_test_servers">Test servers</string>
+    <string name="vpn_servers">Servers</string>
+    <string name="vpn_servers_empty">No servers yet. Add a subscription and update it.</string>
+    <string name="vpn_latency_value">%1$d ms</string>
+    <string name="vpn_latency_unknown">—</string>
+    <string name="vpn_routing">Routing</string>
+    <string name="vpn_auto_switch">Switch between Wi-Fi and mobile data</string>
+    <string name="vpn_auto_switch_subtitle">Keeps the traffic on the radio you picked</string>
+    <string name="vpn_mode_auto">Automatic</string>
+    <string name="vpn_mode_wifi">Wi-Fi only</string>
+    <string name="vpn_mode_lte">Mobile data only</string>
+    <string name="vpn_current_network">Current network</string>
+    <string name="vpn_network_wifi">Wi-Fi</string>
+    <string name="vpn_network_cellular">Mobile data</string>
+    <string name="vpn_network_ethernet">Ethernet</string>
+    <string name="vpn_network_other">Other</string>
+    <string name="vpn_network_none">Offline</string>
+    <string name="vpn_no_server_selected">Pick a server first</string>
+    <string name="vpn_notification_title">Zapret2 Plus tunnel</string>
+    <string name="vpn_notification_text">The tunnel is running</string>
+    <string name="vpn_notification_channel">Tunnel</string>
+    <string name="network_guard_notification_title">Network switching</string>
+    <string name="network_guard_notification_channel">Network switching</string>
+    <string name="network_guard_notification_auto">Automatic: Wi-Fi first, mobile data as fallback</string>
+    <string name="network_guard_notification_wifi">Wi-Fi only</string>
+    <string name="network_guard_notification_lte">Mobile data only</string>
 </resources>

@@ -10,11 +10,18 @@ android {
     compileSdk = 37
 
     defaultConfig {
-        applicationId = "com.zapret2.app"
+        applicationId = "com.zapret2.plus"
         minSdk = 24
         targetSdk = 35
         versionCode = 2030011
         versionName = "2.3.11"
+
+        ndk {
+            // The sing-box core ships as a single 81 MB library per ABI. Only the ABI that
+            // every current phone uses is packaged; armeabi-v7a can be added with
+            // -PincludeArm32=true on machines that still need it.
+            abiFilters += listOf("arm64-v8a")
+        }
     }
 
     signingConfigs {
@@ -87,6 +94,10 @@ dependencyLocking {
 dependencies {
     // libsu - root library by topjohnwu (Magisk author)
     implementation("com.github.topjohnwu.libsu:core:6.0.0")
+
+    // sing-box core bindings. The Java bindings live in libs/, the native library in
+    // src/main/jniLibs/arm64-v8a/libbox.so, so the repository never carries the whole AAR.
+    implementation(files("libs/libbox-classes.jar"))
 
     // AndroidX core
     implementation("androidx.core:core-ktx:1.15.0")

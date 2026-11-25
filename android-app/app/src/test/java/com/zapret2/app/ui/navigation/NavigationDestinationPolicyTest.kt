@@ -17,6 +17,7 @@ class NavigationDestinationPolicyTest {
         ).readText()
         val destinationNames = listOf(
             "Control",
+            "Vpn",
             "Profiles",
             "Presets",
             "Hostlists",
@@ -27,10 +28,10 @@ class NavigationDestinationPolicyTest {
             "HostlistContent",
         )
 
-        assertEquals(8, navigationScreens.size)
-        assertEquals(8, navigationScreens.distinct().size)
-        assertEquals(9, allScreens.size)
-        assertEquals(9, allScreens.map { it.route }.distinct().size)
+        assertEquals(9, navigationScreens.size)
+        assertEquals(9, navigationScreens.distinct().size)
+        assertEquals(10, allScreens.size)
+        assertEquals(10, allScreens.map { it.route }.distinct().size)
         assertFalse(Screen.HostlistContent in navigationScreens)
         assertTrue(source.contains("startDestination = Screen.Control.route"))
 
@@ -46,7 +47,7 @@ class NavigationDestinationPolicyTest {
         }
         assertEquals(
             "NavHost must not contain unregistered literal destinations",
-            9,
+            10,
             Regex("\\bcomposable\\s*\\(").findAll(source).count(),
         )
         assertTrue(source.contains("navArgument(\"name\") { type = NavType.StringType }"))
